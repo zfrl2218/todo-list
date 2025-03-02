@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZFRL's Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ZFRL's Todo List</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" id="search" placeholder="Search todos...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <select id="priority-filter">
+                <option value="all">All Priorities</option>
+                <option value="high">High Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="low">Low Priority</option>
+            </select>
+            
+            <select id="status-filter">
+                <option value="all">All Status</option>
+                <option value="active">Active</option>
+                <option value="completed">Completed</option>
+            </select>
+        </div>
+
+        <div class="todo-list" id="todo-list"></div>
+        
+        <button class="add-todo-btn" id="add-todo">
+            <i class="fas fa-plus"></i> Add New Todo
+        </button>
+    </div>
+
+    <div id="add-todo-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add New Todo</h2>
+            <input type="text" id="todo-title" placeholder="Todo Title">
+            
+            <div class="priority-selector">
+                <h3>Priority</h3>
+                <label>
+                    <input type="radio" name="priority" value="high">
+                    High
+                </label>
+                <label>
+                    <input type="radio" name="priority" value="medium" checked>
+                    Medium
+                </label>
+                <label>
+                    <input type="radio" name="priority" value="low">
+                    Low
+                </label>
+            </div>
+            
+            <div class="due-date-selector">
+                <h3>Due Date</h3>
+                <input type="date" id="due-date">
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="cancel-btn" id="cancel-todo">Cancel</button>
+                <button class="save-todo-btn" id="save-todo">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
